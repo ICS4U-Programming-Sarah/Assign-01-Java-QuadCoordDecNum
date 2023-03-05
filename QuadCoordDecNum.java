@@ -73,7 +73,7 @@ public final class QuadCoordDecNum {
                     // If statement to determine quadrant on basis
                     // of user input. It then displays the corresponding.
                     // quadrant.
-                    if (xCoordDoub > zeroOp && yCoordDoub > zeroOp) {
+                    if (xCoordDoub >= zeroOp && yCoordDoub > zeroOp) {
                         System.out.print("For the point, (" + xCoordStr
                                 + ", " + yCoordDoub + ")");
                         System.out.println(", it lies in the first quadrant.");
@@ -132,15 +132,16 @@ public final class QuadCoordDecNum {
                     // Convert from string to double.
                     final double numTwoDoub = Double.parseDouble(numTwoStr);
 
-                    // Round to 3 decimal places before comparison.
-                    final String numOne = String.format("%.3f", numOneDoub);
-                    final String numTwo = String.format("%.3f", numTwoDoub);
+                    // Round to 3 decimal places before comparison
+                    // trim any trailing zeros.
+                    final String numOne = String.format("%.3f", numOneDoub).trim();
+                    final String numTwo = String.format("%.3f", numTwoDoub).trim();
 
                     // If statement to see if numbers are the same
                     // up to the decimal places.
-                    if (numOne == numTwo) {
-                        System.out.print("For the number " + numOne + "and" +
-                                numTwo + "these numbers are the same!");
+                    if (numOne.equals(numTwo)) {
+                        System.out.println("For the numbers, " + numOne + " and " +
+                                numTwo + " these numbers are the same!");
                     } else {
                         System.out.println("The numbers aren't the same.");
                     }
@@ -152,7 +153,7 @@ public final class QuadCoordDecNum {
                 }
             } catch (NumberFormatException error) {
                 // Displays error to user.
-                System.out.print("Invalid, please enter valid input."
+                System.out.print("Invalid, please enter valid input. "
                         + error.getMessage());
             }
             // Executes if user does not select one of the options.
