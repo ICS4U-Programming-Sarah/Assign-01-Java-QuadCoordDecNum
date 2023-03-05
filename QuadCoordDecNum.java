@@ -132,17 +132,17 @@ public final class QuadCoordDecNum {
                     // Convert from string to double.
                     final double numTwoDoub = Double.parseDouble(numTwoStr);
 
-                    // Round to 3 decimal places.
-                    System.out.format("%.3f", numOneDoub);
-                    System.out.format("%.3f", numTwoDoub);
+                    // Round to 3 decimal places before comparison.
+                    final String numOne = String.format("%.3f", numOneDoub);
+                    final String numTwo = String.format("%.3f", numTwoDoub);
 
-                    // If statement to see if numbers are up to
-                    // same decimal places.
-
-                    if (numOneDoub == numTwoDoub) {
-                        System.out.print("The numbers are up to the same decimal places.");
+                    // If statement to see if numbers are the same
+                    // up to the decimal places.
+                    if (numOne == numTwo) {
+                        System.out.print("For the number " + numOne + "and" +
+                                numTwo + "these numbers are the same!");
                     } else {
-                        System.out.print("The numbers aren't up to same decimal places.");
+                        System.out.println("The numbers aren't the same.");
                     }
 
                 } catch (NumberFormatException error) {
