@@ -166,12 +166,20 @@ public final class QuadCoordDecNum {
             // Executes problem in order for user to do it again.
             do {
                 System.out.print("Would you like to play again (y/n): ");
+                System.out.print("");
+                // Receive user input.
                 quesAns = scanner.nextLine();
+                // If statement checking to see what user enters.
+                // If enters no, display below.
                 if (quesAns.equals("n")) {
                     System.out.print("Thanks for playing!");
                     System.out.print("");
-                } else {
-                    System.out.print("Invalid. Please enter valid input.");
+                }
+                // Checks for invalid cases in case user does not
+                // enter a y or n.
+                if (!quesAns.equals("y") && !quesAns.equals("n")) {
+                    // Displays error to user.
+                    System.out.print("Invalid, please enter y or n.");
                     System.out.print("");
                 }
             } while (!quesAns.equals("y") && !quesAns.equals("n"));
