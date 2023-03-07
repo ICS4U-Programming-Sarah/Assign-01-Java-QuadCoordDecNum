@@ -42,7 +42,7 @@ public final class QuadCoordDecNum {
         final String opOne = "1";
         final double zeroOp = 0;
         final String opTwo = "2";
-        String repeatQues = " ";
+        String quesAns = " ";
 
         // Creates a new scanner
         final Scanner scanner = new Scanner(System.in);
@@ -116,7 +116,7 @@ public final class QuadCoordDecNum {
             } else if (userSelector.equals(opTwo)) {
                 System.out.print("This program tells you if the two");
                 System.out.print(" decimals numbers entered are up to the same");
-                System.out.println(" decimal places!");
+                System.out.println(" decimal places including the number!");
 
                 // Receive user input.
                 System.out.print("Enter the first decimal number: ");
@@ -166,15 +166,16 @@ public final class QuadCoordDecNum {
             // Executes problem in order for user to do it again.
             do {
                 System.out.print("Would you like to play again (y/n): ");
-                String quesAns = scanner.nextLine();
+                quesAns = scanner.nextLine();
                 if (quesAns.equals("n")) {
                     System.out.print("Thanks for playing!");
+                    System.out.print("");
                 } else {
                     System.out.print("Invalid. Please enter valid input.");
                     System.out.print("");
                 }
-            } while (!repeatQues.equals("y") && !repeatQues.equals("n"));
-        } while (repeatQues.equals("y"));
+            } while (!quesAns.equals("y") && !quesAns.equals("n"));
+        } while (quesAns.equals("y"));
         scanner.close();
     }
 }
