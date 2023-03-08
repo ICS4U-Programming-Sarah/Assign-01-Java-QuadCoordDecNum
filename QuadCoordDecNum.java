@@ -1,15 +1,16 @@
 import java.util.Scanner;
 
 /**
-* This program receives user guess from user.
-* From information given, it checks to see if guess
-* is the same as random number generated.
+* This program asks the user for (x,y) coordinates,
+* it then displays what quadrant the point resides in. 
+* It also asks the user for two decimal numbers &
+* tells user if it is the same number up to three decimal places.
 *
 *
 * @author  Sarah Andrew
 * @version 1.0
 *
-* @since   2023-02-26.
+* @since   2023-03-07.
 */
 
 public final class QuadCoordDecNum {
@@ -32,7 +33,7 @@ public final class QuadCoordDecNum {
      */
     public static void main(String[] args) {
         // Introduction.
-        System.out.println("Today, we will be two problems.");
+        System.out.println("Today, we will be doing two problems.");
         System.out.print("Problem 1: Determining quadrant based ");
         System.out.println("on x & y coordinates.");
         System.out.print("Problem 2: Decimal number placement on");
@@ -76,13 +77,30 @@ public final class QuadCoordDecNum {
                         // If statement to determine quadrant on basis
                         // of user input. It then displays the corresponding.
                         // quadrant.
-                        if (xCoordDoub >= zeroOp && yCoordDoub > zeroOp) {
+                        if (xCoordDoub > zeroOp && yCoordDoub > zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.println(", it lies in the first quadrant.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub > zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
+                            System.out.println(", it lies within the second quadrant.");
+                        } else if (xCoordDoub == zeroOp && yCoordDoub > zeroOp) {
+                            System.out.print("For the point, (" + xCoordStr
+                                    + ", " + yCoordDoub + ")");
+                            System.out.println(", it lies within the positive y axises.");
+                        } else if (xCoordDoub > zeroOp && yCoordDoub == zeroOp) {
+                            System.out.print("For the point, (" + xCoordStr
+                                    + ", " + yCoordDoub + ")");
+                            System.out.println(", it lies within the positive x axises.");
+                        } else if (xCoordDoub == zeroOp && yCoordDoub < zeroOp) {
+                            System.out.print("For the point, (" + xCoordStr
+                                    + ", " + yCoordDoub + ")");
+                            System.out.println(", it lies within the negative y axises.");
+                        } else if (xCoordDoub < zeroOp && yCoordDoub == 0) {
+                            System.out.print("For the point, (" + xCoordStr
+                                    + ", " + yCoordDoub + ")");
+                            System.out.println(", it lies within the negative x axises.");
                             System.out.println(", it lies in the second quadrant.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
@@ -136,13 +154,13 @@ public final class QuadCoordDecNum {
                         final double numTwoDoub = Double.parseDouble(numTwoStr);
 
                         // Round to 3 decimal places before comparison
-                        // trim any trailing zeros.
-                        final String numOne = String.format("%.3f", numOneDoub).trim();
-                        final String numTwo = String.format("%.3f", numTwoDoub).trim();
-
+                        final double numOne = Double.parseDouble(
+                            String.format("%.3f", numOneDoub));
+                        final double numTwo = Double.parseDouble(
+                                String.format("%.3f", numTwoDoub));
                         // If statement to see if numbers are the same
                         // up to the decimal places.
-                        if (numOne.equals(numTwo)) {
+                        if (numOne == numTwo) {
                             System.out.println("For the numbers, " + numOne + " and " +
                                     numTwo + " these numbers are the same!");
                         } else {
@@ -165,8 +183,7 @@ public final class QuadCoordDecNum {
             }
             // Executes problem in order for user to do it again.
             do {
-                System.out.print("Would you like to play again (y/n): ");
-                System.out.print("");
+                System.out.println("Would you like to play again (y/n): ");
                 // Receive user input.
                 quesAns = scanner.nextLine();
                 // If statement checking to see what user enters.
