@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
 * This program asks the user for (x,y) coordinates,
-* it then displays what quadrant the point resides in. 
+* it then displays what quadrant the point resides in.
 * It also asks the user for two decimal numbers &
 * tells user if it is the same number up to three decimal places.
 *
@@ -80,43 +80,55 @@ public final class QuadCoordDecNum {
                         if (xCoordDoub > zeroOp && yCoordDoub > zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies in the first quadrant.");
+                            System.out.print(", it lies in the first.");
+                            System.out.println(" quadrant.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub > zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies within the second quadrant.");
-                        } else if (xCoordDoub == zeroOp && yCoordDoub > zeroOp) {
+                            System.out.print(", it lies in the second.");
+                            System.out.println(" quadrant.");
+                        } else if (xCoordDoub == zeroOp
+                            && yCoordDoub > zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies within the positive y axises.");
-                        } else if (xCoordDoub > zeroOp && yCoordDoub == zeroOp) {
+                            System.out.print(", it lies within");
+                            System.out.println("the positive y axises.");
+                        } else if (xCoordDoub > zeroOp
+                            && yCoordDoub == zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies within the positive x axises.");
-                        } else if (xCoordDoub == zeroOp && yCoordDoub < zeroOp) {
+                            System.out.print(", it lies within");
+                            System.out.println("the positive x axises.");
+                        } else if (xCoordDoub == zeroOp
+                            && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies within the negative y axises.");
+                            System.out.print(", it lies within");
+                            System.out.println("the negative y axises.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub == 0) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies within the negative x axises.");
-                            System.out.println(", it lies in the second quadrant.");
+                            System.out.print(", it lies within the");
+                            System.out.println("negative x axises.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies in the third quadrant.");
+                            System.out.print(", it lies in the");
+                            System.out.println("third quadrant.");
                         } else if (xCoordDoub > zeroOp && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
-                            System.out.println(", it lies in the fourth quadrant.");
-                        } else if (xCoordDoub == zeroOp && yCoordDoub == zeroOp) {
+                            System.out.print(", it lies in the");
+                            System.out.println("fourth quadrant.");
+                        } else if (xCoordDoub == zeroOp
+                            && yCoordDoub == zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.println(" it lies in the origin.");
                         } else {
                             // Display error.
-                            System.out.print("Please enter a valid coordinate(s).");
+                            System.out.print("Please enter a valid ");
+                            System.out.println("coordinate(s).");
                         }
 
                     } catch (NumberFormatException error) {
@@ -133,7 +145,8 @@ public final class QuadCoordDecNum {
                 // Executes when user selects option two.
             } else if (userSelector.equals(opTwo)) {
                 System.out.print("This program tells you if the two");
-                System.out.print(" decimals numbers entered are up to the same");
+                System.out.print(" decimals numbers entered are");
+                System.out.print(" up to the same");
                 System.out.println(" decimal places including the number!");
 
                 // Receive user input.
@@ -161,8 +174,9 @@ public final class QuadCoordDecNum {
                         // If statement to see if numbers are the same
                         // up to the decimal places.
                         if (numOne == numTwo) {
-                            System.out.println("For the numbers, " + numOne + " and " +
-                                    numTwo + " these numbers are the same!");
+                            System.out.println("For the numbers, " + numOne
+                                    + " and " + numTwo
+                                    + " these numbers are the same!");
                         } else {
                             System.out.println("The numbers aren't the same.");
                         }
