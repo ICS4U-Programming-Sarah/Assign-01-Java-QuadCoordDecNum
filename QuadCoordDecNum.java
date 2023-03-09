@@ -92,34 +92,34 @@ public final class QuadCoordDecNum {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.print(", it lies within");
-                            System.out.println("the positive y axises.");
+                            System.out.println(" the positive y axises.");
                         } else if (xCoordDoub > zeroOp
                             && yCoordDoub == zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.print(", it lies within");
-                            System.out.println("the positive x axises.");
+                            System.out.println(" the positive x axises.");
                         } else if (xCoordDoub == zeroOp
                             && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.print(", it lies within");
-                            System.out.println("the negative y axises.");
+                            System.out.println(" the negative y axises.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub == 0) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.print(", it lies within the");
-                            System.out.println("negative x axises.");
+                            System.out.println(" negative x axises.");
                         } else if (xCoordDoub < zeroOp && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.print(", it lies in the");
-                            System.out.println("third quadrant.");
+                            System.out.println(" third quadrant.");
                         } else if (xCoordDoub > zeroOp && yCoordDoub < zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
                                     + ", " + yCoordDoub + ")");
                             System.out.print(", it lies in the");
-                            System.out.println("fourth quadrant.");
+                            System.out.println(" fourth quadrant.");
                         } else if (xCoordDoub == zeroOp
                             && yCoordDoub == zeroOp) {
                             System.out.print("For the point, (" + xCoordStr
@@ -128,7 +128,7 @@ public final class QuadCoordDecNum {
                         } else {
                             // Display error.
                             System.out.print("Please enter a valid ");
-                            System.out.println("coordinate(s).");
+                            System.out.println(" coordinate(s).");
                         }
 
                     } catch (NumberFormatException error) {
@@ -197,24 +197,24 @@ public final class QuadCoordDecNum {
             }
             // Executes problem in order for user to do it again.
             do {
-                System.out.println("Would you like to play again (y/n): ");
+                System.out.println("Would you like to play again? (y/n): ");
                 // Receive user input.
                 quesAns = scanner.nextLine();
                 // If statement checking to see what user enters.
                 // If enters no, display below.
-                if (quesAns.equals("n")) {
+                if ("n".equals(quesAns)) {
                     System.out.print("Thanks for playing!");
                     System.out.print("");
                 }
                 // Checks for invalid cases in case user does not
                 // enter a y or n.
-                if (!quesAns.equals("y") && !quesAns.equals("n")) {
+                if (!"y".equals(quesAns) && !"n".equals(quesAns)) {
                     // Displays error to user.
                     System.out.print("Invalid, please enter y or n.");
                     System.out.print("");
                 }
-            } while (!quesAns.equals("y") && !quesAns.equals("n"));
-        } while (quesAns.equals("y"));
+            } while (!"y".equals(quesAns) && !"n".equals(quesAns));
+        } while ("y".equals(quesAns));
         scanner.close();
     }
 }
